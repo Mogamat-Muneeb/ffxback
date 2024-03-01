@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (req: any, res: any) => res.send("Express on Vercel"));
+app.get("/", (req: any, res: any) => res.send("FFx Backend"));
 
 app.listen(3000, () => console.log("Server ready on possrt 3000."));
 
