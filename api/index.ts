@@ -3,6 +3,6 @@ const app = express();
 
 app.get("/", (req: any, res: any) => res.send("FFx Backend LOL"));
 
-app.listen(3000, () => console.log("Server ready on possrt 3000."));
+app.listen(8080, () => console.log("Server ready on possrt 8080."));
 
 module.exports = app;
