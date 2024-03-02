@@ -1,12 +1,16 @@
 import express, { Request, Response } from "express";
 import bcrypt from "bcrypt";
+import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import User from "../models/User";
 import ResetToken from "../models/ResetToken";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 
+dotenv.config();
 const router = express.Router();
+
+console.log("testing env", process.env.ACCESS_TOKEN_SECRET);
 
 // !LOGIN_ROUTE
 router.post("/login", async (req: Request, res: Response) => {
@@ -51,6 +55,7 @@ router.post("/login", async (req: Request, res: Response) => {
 router.post("/register", async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
+    console.log("🚀 ~ router.post ~ req.body:", req.body);
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -164,4 +169,4 @@ router.post("/reset-password", async (req: Request, res: Response) => {
   }
 });
 
-module.exports = router;
+export default router;
