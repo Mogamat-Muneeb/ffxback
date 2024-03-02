@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { connect } from "mongoose";
 import cors from "cors";
-import router from "./routes/auth.routes";
+import router from "./routes";
 
 const app = express();
 
