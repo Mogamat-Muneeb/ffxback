@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import { connect } from "mongoose";
 import cors from "cors";
 const app = express();
-const loginRouter = require("./routes/auth.routes.ts");
+// const loginRouter = require("./routes/auth.routes.ts");
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ connect(process.env.MONGO_URL || "")
 app.use(cors());
 
 app.get("/", (req: Request, res: Response) => res.send("FFx Backend"));
-app.use("/auth", loginRouter);
+// app.use("/auth", loginRouter);
 app.listen(8080, () => console.log("Server ready on possrt 8080."));
 
 module.exports = app;
