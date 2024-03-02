@@ -21,6 +21,6 @@ app.use(cors());
 
 app.get("/", (req: Request, res: Response) => res.send("FFx Backend"));
 app.use("/auth", router);
-app.listen(8080, () => console.log("Server ready on possrt 8080."));
+// app.listen(8080, () => console.log("Server ready on possrt 8080."));
 
 module.exports = app;
